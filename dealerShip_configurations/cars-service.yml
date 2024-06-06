@@ -3,11 +3,8 @@ server:
   
 spring:
   application:
-    name: car-service 
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-
-
+    name: car-service
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -21,6 +18,9 @@ spring:
     username: unTalNikko
     password: pass3456
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+
 eureka:
   client:
     serviceUrl:
