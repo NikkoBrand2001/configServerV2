@@ -18,6 +18,11 @@ spring:
     username: unTalNikko
     password: pass3456
     driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+  sql:
+    init:
+      mode: always
+
 eureka:
   client:
     serviceUrl:

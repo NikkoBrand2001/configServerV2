@@ -12,12 +12,16 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
-
   datasource:
     url: jdbc:mysql://localhost:3306/dealership_db
     username: unTalNikko
     password: pass3456
     driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+  sql:
+    init:
+      mode: always
+
 eureka:
   client:
     serviceUrl:
