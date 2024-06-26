@@ -5,19 +5,7 @@ spring:
   application:
     name: gateway-service
 
-  jpa:
-    defer-datasource-initialization: true
-    hibernate:
-      ddl-auto: create-drop
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-    show-sql: true
 
-  datasource:
-    url: jdbc:mysql://localhost:3306/security_db
-    name: unTalNikko
-    password: pass3456
 
   cloud: 
     gateway:
@@ -32,7 +20,13 @@ spring:
           predicates:
             - Path=/client/**
 
-        - id: another-route
-          uri:  http://localhost:8081
+        - id: car-service
+          uri: http://localhost:8081
           predicates:
             - Path=/car/**
+
+        - id: security-service
+          uri: http://localhost:9898
+          predicates:
+            - Path=/auth/**
+            - Path=/admin/**
