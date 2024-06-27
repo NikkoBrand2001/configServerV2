@@ -2,7 +2,8 @@ server:
   port: 9898
 
 spring:
-  name: security-service
+  application:
+    name: security-service
 
   jpa:
     defer-datasource-initialization: true
@@ -15,7 +16,6 @@ spring:
 
   datasource:
     url: jdbc:mysql://localhost:3306/security_db
-    name: unTalNikko
+    username: unTalNikko
     password: pass3456
     driver-class-name: com.mysql.cj.jdbc.Driver
-    initialization-mode: always
